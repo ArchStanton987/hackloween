@@ -1,25 +1,15 @@
 import React from 'react'
 import './Cinema.css'
 
-class Cinema extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            movies: []
-        }
-    }
-
-
-    render(){
-        return(
-            <div className = 'CinemaBackground'>
-                <div className = 'BoxOfPictureFromTheMovie'>
-                    <img className = 'PictureFromTheMovie' src= {this.state.film.posterurl} alt="Picture of the movie"/>
-                </div>
-            </div> 
-        );
-            
-    }
+function Cinema ({ film }) {
+    console.log(film)
+    return(
+        <div className = 'CinemaBackground'>
+            <div className = 'BoxOfPictureFromTheMovie'>
+                <img className = 'PictureFromTheMovie' src= {"https://nsa40.casimages.com/img/2019/10/07/1910070355402418.jpg"} alt="Picture of the movie"/>
+            </div>
+        </div> 
+    )
 }
 
 export default Cinema

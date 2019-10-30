@@ -1,17 +1,18 @@
 import React from 'react'
 import axios from "axios"
 import FilmCard from './FilmCard'
+import Cinema from './Cinema'
 
 class FilmChoice extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            film: {
+            film : {
                 title: "",
                 director: "",
-                posterUrl: "",
-                year: ""
-            }           
+                year: "",
+                posterUrl: ""
+            }
         } 
         this.getMovies = this.getMovies.bind(this)                                      
     }
@@ -24,7 +25,7 @@ class FilmChoice extends React.Component {
 				this.setState({
                         film: {
                             title: data.movies[randomId].title,
-                            director: data.movies[randomId].director,
+                            filmdirector: data.movies[randomId].director,
                             posterUrl: data.movies[randomId].posterUrl,
                             year: data.movies[randomId].year
                         }					
@@ -35,7 +36,7 @@ class FilmChoice extends React.Component {
         return (
             <div>
                 <button onClick = {this.getMovies}>Choisir ses films</button>
-                < FilmCard film={this.state.film}/>
+                < FilmCard film={this.state.film} />
             </div>
         )
     }
